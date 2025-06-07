@@ -39,7 +39,7 @@ async def handle_user_dice(message: Message):
                 await message.answer(f"Ничья! 🎲")
             elif user_value > bot_value:
                 await message.answer(f"ТЫ выйграл у тебя выпало {user_value}, больше чем у бота (У бота выпало {bot_value})! 🎲")
-            elif bot_value < user_value:
+            elif user_value < bot_value: # Тут была ошибка, перепутал :(
                 await message.answer(f"ТЫ проиграл у тебя выпало {user_value}, меньше чем у бота (У бота выпало {bot_value})! 🎲")
             waiting_for_user_dice.pop(user_id)
         else:
